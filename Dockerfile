@@ -13,7 +13,6 @@ RUN \
 ENV HOME /root
 
 WORKDIR /root
-
 COPY . . 
 
 CMD ["bash"]
