@@ -28,7 +28,7 @@ and you will be in your virtual Ubuntu 22.04 machine (python installed). Note th
 **In another terminal** to attach to the same container, run
 
 ```
-docker exec -it ceng435vm bash`
+   docker exec -it ceng435vm bash
 ```
 
 These two terminal will help you run your client and server applications.
