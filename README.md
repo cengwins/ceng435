@@ -23,7 +23,9 @@ After the image is built
    docker run -t -i --rm --privileged --cap-add=NET_ADMIN --name ceng435vm -v ./code:/app:rw ceng435:latest bash
 ```
 
-and you will be in your virtual Ubuntu 22.04 machine (python installed). Note that if you develop code in this virtual machine, if you stop the machine your code will be lost. That is why I recommend you to use Github to store your code and clone in the machine, and push your code to Github before shutting the virtual machine down. The other option is to work in the /app folder in your virtual machine which is mounted to the "code" directory of your own machine...
+and you will be in your virtual Ubuntu 22.04 machine (python installed). Note that if you develop code in this virtual machine, if you stop the machine your code will be lost. That is why I recommend you to use Github to store your code and clone in the machine, and push your code to Github before shutting the virtual machine down. The other option is to work in the /app folder in your virtual machine which is mounted to the "code" directory of your own machine.
+
+**IMPORTANT** Note that the "code" folder on your local machine is mounted to the "/app" folder in the virtual machine (read/write mode). You can use these folders (they are the same in fact) to develop your code. Other than the /app folder, this tool does not guarantee any persistent storage: if you exit the virtual machine, all data will be lost.
 
 **In another terminal** to attach to the same container, run
 
@@ -47,7 +49,7 @@ to generate 10 small (10K) and 10 large (10M) objects together with their md5 ch
 
 Some tc commands that may be of help to you can be found at https://man7.org/linux/man-pages/man8/tc-netem.8.html
 
-**IMPORTANT** Note that the "code" folder on your local machine is mounted to the "/app" folder in the virtual machine (read/write mode). You can use these folders (they are the same in fact) to develop your code. Other than the /app folder this tool does not guarantee any persistent storage: if you exit the virtual machine, all data will be lost.
+You will analyze the impact of delay, packet loss percentage, corrupt packet percentage, duplicate percentage, reorder percentage on the total time to download all 20 objects. You will plot figures for each parameter (delay, loss, ...) where the x-axis of the figure will have various values for these parameters and the y-axis will be the total time to download 20 objects. There will be two curves in each figure, one for TCP and the other curve for your UDP-based RDT implementation together with interleaving technique.
 
 
 
