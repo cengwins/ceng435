@@ -15,6 +15,8 @@ ENV HOME /root
 WORKDIR /root
 COPY . . 
 
+RUN chmod +x /root/objects/generateobjects.sh
+
 CMD ["bash"]
 
 

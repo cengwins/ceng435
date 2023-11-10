@@ -37,12 +37,13 @@ After running the Ubuntu VM, you can type "ifconfig -a" to see your network conf
 
 Docker extension of vscode will be of great benefit to you.
 
-In the server terminal, move to the objects folder and run
+In the server terminal, move to the **"objects" folder** and run
 
 ```
-   chmod +x generateojects
    ./generateobjects
 ```
+
+to generate 10 small (10K) and 10 large (10M) objects together with their md5 checksums.
 
 Some tc commands that may be of help to you can be found at https://man7.org/linux/man-pages/man8/tc-netem.8.html
 
