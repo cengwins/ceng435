@@ -1,6 +1,6 @@
 1. Install docker and VSCode on your sytstem
-2. Create a folder on your system, name the folder "CENG435"
-3. Copy the Dockerfile into this folder.
+2. Go to your favorite development folder 
+3. Run "git clone https://github.com/cengwins/ceng435.git"
 4. Open this folder in VSCode
 5. Open a terminal and run "docker build -t ceng435 ."
 6. After the image is built, run "docker run --rm -it  ceng435:latest" and you will be in your virtual Ubuntu 22.04 machine which run python code. Note that if you develop code in this virtual machine, if you stop the machine your code will be lost. That is why I recommend you to use Github to store your code and clone in the machine.
