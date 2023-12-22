@@ -28,9 +28,9 @@ and the following for the client machine
    docker run -t -i --rm --privileged --cap-add=NET_ADMIN --name ceng435client -v ./code:/app:rw ceng435:latest bash
 ```
 
-and you will be in your virtual Ubuntu 22.04 machines (python installed). Note that if you develop code in these virtual machines, if you stop the machine your code will be lost. That is why I recommend you to use Github to store your code and clone in the machine, and push your code to Github before shutting the virtual machine down. The other option is to work in the /app folder in your virtual machine which is mounted to the "code" directory of your own machine.
+and you will be in your Ubuntu 22.04 Docker instance (python installed). Note that if you develop code in these Docker instances, if you stop the machine your code will be lost. That is why I recommend you to use Github to store your code and clone in the machine, and push your code to Github before shutting the Docker instances down. The other option is to work in the /app folder in your Docker instance is mounted to the "code" directory of your own machine.
 
-**IMPORTANT** Note that the "code" folder on your local machine is mounted to the "/app" folder in the virtual machine (read/write mode). You can use these folders (they are the same in fact) to develop your code. Other than the /app folder, this tool does not guarantee any persistent storage: if you exit the virtual machine, all data will be lost.
+**IMPORTANT** Note that the "code" folder on your local machine is mounted to the "/app" folder in the Docker instance  (read/write mode). You can use these folders (they are the same in fact) to develop your code. Other than the /app folder, this tool does not guarantee any persistent storage: if you exit the Docker instance, all data will be lost.
 
 After running the Ubuntu Docker, you can type "ip addr" to see your network configuration. Work on eth0.
 
