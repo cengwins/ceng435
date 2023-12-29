@@ -1,0 +1,23 @@
+services:
+  server:
+    image: ceng435:latest
+    hostname: server
+    container_name: server
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./code:/app:rw
+      - ./examples:/examples:rw
+  client:
+    image: ceng435:latest
+    hostname: client
+    container_name: client
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./code:/app:rw
+      - ./examples:/examples:rw

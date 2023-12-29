@@ -1,5 +1,7 @@
 
-Install docker and VSCode on your sytstem
+Install docker (and optionally compose V2 plugin - not the docker-compose!) and VSCode on your sytstem. Run the docker containers as non-root users...
+
+## Common installation steps
 
 Go to your favorite development folder on your local machine and run
 
@@ -15,7 +17,9 @@ Open a terminal in VSCode, under the ceng435 directory where the Dockerfile resi
    docker build -t ceng435 .
 ```
 
-After the image is built
+After the image is built you can directly run your containers or use docker compose pluging to run them:
+
+## RUN containers directly
 
 You can run the following to get the server machine
 ```
@@ -49,4 +53,29 @@ Some tc commands that may be of help to you can be found at https://man7.org/lin
 You will analyze the impact of delay, packet loss percentage, corrupt packet percentage, duplicate percentage, reorder percentage on the total time to download all 20 objects. You will plot figures for each parameter (delay, loss, ...) where the x-axis of the figure will have various values for these parameters and the y-axis will be the total time to download 20 objects. There will be two curves in each figure, one for TCP and the other curve for your UDP-based RDT implementation together with interleaving technique.
 
 
+
+## RUN containers using docker compose plugin
+
+To start server and client containers:
+```
+docker compose up -d
+```
+
+To stop server and client containers:
+```
+docker compose down
+```
+
+Note that, if you orchestrate your containers using docker compose, the containers will have hostnames ("client" and "server") and DNS will be able to resolve them...
+
+In one terminal, attach to the server container
+```
+docker exec -it server bash
+```
+In another terminal, attach to the client container
+```
+docker exec -it client bash
+```
+
+The local "code" folder is mapped to the "/app" folder in containers and the local "examples" folder is mapped to the "/examples" folder in the container. You can develop your code on your local folders on your own host machine, they will be immediately synchronized with the "/app" folder on containers. The volumes are created in read-write mode, so changes can be made both on the host or on the containers. You can run your code on the containers...
 
